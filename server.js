@@ -8,7 +8,7 @@ const app = express();
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const volenteerRoutes = require("./routes/volenteerRoutes");
-// const cors = require("cors");
+const cors = require("cors");
 dotenv.config();
 mongoose.set("strictQuery", true);
 connectDB();
@@ -29,7 +29,7 @@ const server = app.listen(PORT, console.log("Server runing in 5000"));
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://volunteer-orpin.vercel.app",
     // credentials: true,
   },
 });
