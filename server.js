@@ -12,6 +12,10 @@ const cors = require("cors");
 dotenv.config();
 mongoose.set("strictQuery", true);
 connectDB();
+app.use(cors({
+  origin: 'https://volunteer-orpin.vercel.app'
+}));
+
 app.use(express.json());
 app.get("/", (req, res) => {
   res.send("API is running..");
